@@ -228,6 +228,7 @@ Create a separate connection for streams which usually fail with error above "Fa
 
 | Version    | Date       | Pull Request                                              | Subject                                                                                                                                                                             |
 |:-----------|:-----------|:----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 4.5.2 | 2025-02-15 | [53928](https://github.com/airbytehq/airbyte/pull/53928) | Update dependencies |
 | 4.5.1 | 2025-02-08 | [49297](https://github.com/airbytehq/airbyte/pull/49297) | Update dependencies |
 | 4.5.0 | 2025-02-04 | [53155](https://github.com/airbytehq/airbyte/pull/53155) | Promoting release candidate 4.5.0-rc.5 to a main version. |
 | 4.5.0-rc.5 | 2025-01-31 | [52700](https://github.com/airbytehq/airbyte/pull/52700)      | Use incremental_dependency for the OrderItems substream                                                                                                                             |
