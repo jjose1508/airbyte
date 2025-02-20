@@ -35,6 +35,7 @@ import io.airbyte.cdk.load.task.implementor.ProcessFileTaskFactory
 import io.airbyte.cdk.load.task.implementor.ProcessRecordsTaskFactory
 import io.airbyte.cdk.load.task.implementor.SetupTaskFactory
 import io.airbyte.cdk.load.task.implementor.TeardownTaskFactory
+import io.airbyte.cdk.load.task.internal.DeserializingInputSequence
 import io.airbyte.cdk.load.task.internal.FlushCheckpointsTaskFactory
 import io.airbyte.cdk.load.task.internal.FlushTickTask
 import io.airbyte.cdk.load.task.internal.InputConsumerTaskFactory
@@ -150,6 +151,7 @@ class DefaultDestinationTaskLauncher<K : WithStream>(
     private val loadPipeline: LoadPipeline?,
     private val partitioner: InputPartitioner,
     private val updateBatchTaskFactory: UpdateBatchStateTaskFactory,
+    private val inputSequence: DeserializingInputSequence,
 ) : DestinationTaskLauncher {
     private val log = KotlinLogging.logger {}
 
@@ -211,6 +213,7 @@ class DefaultDestinationTaskLauncher<K : WithStream>(
                 loadPipeline = loadPipeline,
                 partitioner = partitioner,
                 openStreamQueue = openStreamQueue,
+                inputSequence = inputSequence,
             )
         launch(inputConsumerTask)
 
